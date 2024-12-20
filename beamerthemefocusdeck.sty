@@ -1,0 +1,47 @@
+\ProvidesPackage{beamerfocusdeck}[2024/12/20 v1.0]
+\ExplSyntaxOn
+% přiřadit barvy z palety
+\seq_new:N \g_color_seq
+\seq_gset_from_clist:Nn \g_color_seq {red, blue, green, gray, yellow, brown} 
+\int_new:N \g_color_pos_int
+\int_set:Nn \g_color_pos_int {1}
+% we must use ~ in the template name because we are in the Expl3 mode
+\setbeamertemplate{background~canvas}{%
+  \int_set:Nn \l_tmpa_int  {\seq_count:N \g_color_seq}
+  \int_compare:nTF {\g_color_pos_int > \l_tmpa_int}{
+    \typeout{************** vetsi}
+    \int_gset:Nn \g_color_pos_int{1}
+  }{
+  }
+  \color{\seq_item:Nn\g_color_seq {\int_use:N\g_color_pos_int}}\rule{\paperwidth}{\paperheight}
+  \int_gincr:N \g_color_pos_int
+  \typeout{***********~color: \int_use:N\g_color_pos_int,~\int_use:N\l_tmpa_int}
+}
+\ExplSyntaxOff
+
+
+% Základní nastavení barev a fontů
+\setbeamercolor{title}{fg=black}
+\setbeamercolor{frametitle}{fg=black}
+\setbeamercolor{structure}{fg=gray} % Barva nadpisů a bloků
+\setbeamercolor{item}{fg=black} % Barva odrážek
+% \setbeamercolor{background canvas}{bg=green!40}
+% \setbeamerfont{frametitle}{size=\large,series=\bfseries}
+\setbeamertemplate{frametitle}
+{
+% \begin{centering}
+\RaggedRight
+\Huge\bfseries
+\insertframetitle\par
+% \end{centering}
+}
+\setbeamerfont{title}{size=\LARGE,series=\bfseries}
+
+% Téma bloků
+\setbeamercolor{block title}{bg=gray!20, fg=black} % Barva nadpisu bloku
+\setbeamercolor{block body}{bg=gray!5, fg=black} % Barva těla bloku
+
+% Vlastní definice snímků
+% \setbeamertemplate{frametitle}[default][center] % Centrum titulku snímků
+\setbeamertemplate{navigation symbols}{} % Skrytí navigačních symbolů
+\setbeamertemplate{footline}{} % Skrytí patičky
