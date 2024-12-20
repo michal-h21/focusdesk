@@ -1,0 +1,78 @@
+\documentclass{beamer}
+
+% Minimalistické nastavení tématu
+\usepackage{tikz}
+\usetheme{focusdeck}
+\usepackage{ragged2e}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Heros}
+\setsansfont{TeX Gyre Heros}
+% \usepackage[sfdefault]{tgheros}
+
+
+
+% Titulní snímek
+\title{Název Prezentace}
+\author{Autor}
+\institute{Instituce}
+\date{\today}
+
+% Obsah prezentace
+\begin{document}
+
+% Titulní strana
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Osnova
+\begin{frame}{Obsah}
+    \tableofcontents
+\end{frame}
+
+% Sekce a snímky
+\section{Úvod}
+\begin{frame}{Úvod}
+    Toto je úvodní snímek.
+    \begin{block}{Hlavní myšlenka}
+        Tady je blok textu, který prezentuje hlavní myšlenku.
+    \end{block}
+    \begin{itemize}
+        \item První bod
+        \item Druhý bod
+    \end{itemize}
+\end{frame}
+
+\section{Hlavní část}
+\begin{frame}{Hlavní část}
+    Tento snímek obsahuje hlavní část prezentace.
+    \begin{alertblock}{Důležité upozornění}
+        Text důležitého upozornění nebo poznámky.
+    \end{alertblock}
+    \begin{itemize}
+        \item První bod
+        \item Druhý bod
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Další slide}
+ Tady  je nějakej text
+\end{frame}
+
+
+\section{Závěr}
+\begin{frame}{Závěr}
+    Shrnutí a závěr prezentace.
+    \begin{exampleblock}{Příklad}
+        Zde je blok s příkladem nebo dodatečným obsahem.
+    \end{exampleblock}
+\end{frame}
+
+% Konec prezentace
+\begin{frame}
+    \centering
+    \Huge Děkuji za pozornost!
+\end{frame}
+
+
+\end{document}
