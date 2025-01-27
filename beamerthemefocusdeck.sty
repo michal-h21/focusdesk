@@ -1,8 +1,9 @@
-\ProvidesPackage{beamerfocusdeck}[2024/12/20 v1.0]
+\ProvidesPackage{beamerthemefocusdeck}[2025/01/27 v0.1]
 \ExplSyntaxOn
 % přiřadit barvy z palety
 \seq_new:N \g_color_seq
 \seq_gset_from_clist:Nn \g_color_seq {red, blue, green, gray, yellow, brown} 
+\seq_gset_from_clist:Nn \g_color_seq {white} 
 \int_new:N \g_color_pos_int
 \int_set:Nn \g_color_pos_int {1}
 % we must use ~ in the template name because we are in the Expl3 mode
@@ -70,11 +71,12 @@
 }
 \setbeamerfont{title}{size=\LARGE,series=\bfseries}
 
-% Téma bloků
+% block themes
 \setbeamercolor{block title}{bg=gray!20, fg=black} % Barva nadpisu bloku
 \setbeamercolor{block body}{bg=gray!5, fg=black} % Barva těla bloku
 
 % Vlastní definice snímků
 % \setbeamertemplate{frametitle}[default][center] % Centrum titulku snímků
-\setbeamertemplate{navigation symbols}{} % Skrytí navigačních symbolů
-\setbeamertemplate{footline}{} % Skrytí patičky
+\setbeamertemplate{navigation symbols}{} % hide navigation symbols
+\setbeamertemplate{footline}{} % hide footline
+\setbeamertemplate{headline}{} % hide headline
